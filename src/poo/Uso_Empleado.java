@@ -60,6 +60,7 @@ class Empleado{
 		sueldo=sue;
 		GregorianCalendar calendario = new GregorianCalendar(agno,mes-1,dia);
 		altaContrato= calendario.getTime();
+		
 	}
 	
 	public Empleado(String nom) {
@@ -101,7 +102,8 @@ final class Jefatura extends Empleado {
 	}
 	
 	private double incentivo;
-	
+	private static int idSiguiente =0;
+	private int id;
 	
 }
 
