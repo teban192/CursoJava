@@ -33,6 +33,7 @@ public class Uso_Empleado {
 		 * 
 		 * }
 		 */
+	    System.out.println(jefa_Finanzas.tomar_decisiones("Dar mas dias de vacaciones a los empleados"));
 		
 		for(Empleado e: misEmpleados) {
 			e.subeSueldo(5);
@@ -99,7 +100,7 @@ class Empleado implements Comparable{
 	private Date altaContrato;
 }
 
-final class Jefatura extends Empleado {
+final class Jefatura extends Empleado implements Jefes{
 	
 	public Jefatura(String nom, double sueldo,int agno,int mes,int dia) {
 		super(nom,sueldo,agno,mes,dia);
@@ -111,6 +112,10 @@ final class Jefatura extends Empleado {
 	public double dameSueldo() {
 		double sueldoJefe = super.dameSueldo();
 		return sueldoJefe + incentivo;
+	}
+	
+	public String tomar_decisiones(String decision) {
+		return "Un miembro de la direccion ha tomado la decision de :"+decision;
 	}
 	
 	private double incentivo;
